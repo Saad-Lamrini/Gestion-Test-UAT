@@ -7,7 +7,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from '@react-navigation/stack';
 import Acceuil from './screens/Acceuil';
 import Signup from './screens/Signup';
-import zeeb from './screens/zeeb';
+
 const Stack = createStackNavigator();
 export default function App() {
   return (
@@ -24,20 +24,16 @@ export default function App() {
           //options={{ headerShown: false }}
         /> */}
         <Stack.Screen
-          name="acceuil"
-          component={Acceuil}
-          options={{ headerShown: false, headerTitleAlign: 'center' }}
-        />
-        <Stack.Screen
           name="signup"
           component={Signup}
           options={{ headerShown: false, headerTitleAlign: 'center' }}
         />
         <Stack.Screen
-          name="zebi"
-          component={zeeb}
+          name="acceuil"
+          component={Acceuil}
           options={{ headerShown: false, headerTitleAlign: 'center' }}
         />
+
         {/* <Stack.Screen
           name="Register"
           component={register}
