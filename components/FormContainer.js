@@ -1,14 +1,14 @@
-import { View, Text, Dimensions } from 'react-native';
+import { View, Text, Dimensions, KeyboardAvoidingView } from 'react-native';
 import React from 'react';
 
 const FormContainer = ({ children }) => {
   return (
-    <View
-      className="justify-center items-center"
-      style={{ width: Dimensions.get('window').width }}
+    <KeyboardAvoidingView
+      className=" "
+      style={{ width: Dimensions.get('window').width, paddingHorizontal: 20 }}
     >
       {children}
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
