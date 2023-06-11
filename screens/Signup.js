@@ -15,15 +15,19 @@ import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
 
 const { width } = Dimensions.get('window');
+
 const Signup = () => {
   const animation = useRef(new Animated.Value(0)).current;
+
+  const scrollView = useRef();
+
   const rightHeaderOpacity = animation.interpolate({
     inputRange: [0, width],
     outputRange: [1, 0],
   });
   const leftHeaderTranslateX = animation.interpolate({
     inputRange: [0, width],
-    outputRange: [0, 40],
+    outputRange: [0, 70],
   });
   const rightHeaderTransleteY = animation.interpolate({
     inputRange: [0, width],
@@ -31,37 +35,40 @@ const Signup = () => {
   });
   const logincolorIntorplate = animation.interpolate({
     inputRange: [0, width],
-    outputRange: ['rgba(27,27,51,1)', 'rgba(27,27,51,0.4)'],
+    outputRange: ['rgba(208, 0, 0, 1)', 'rgba(208, 0, 0, 0.4)'],
   });
   const signupcolorIntorplate = animation.interpolate({
     inputRange: [0, width],
-    outputRange: ['rgba(27,27,51,0.4)', 'rgba(27,27,51,1)'],
+    outputRange: ['rgba(208, 0, 0, 0.4)', 'rgba(208, 0, 0, 1)'],
   });
   return (
     <View className="flex-1 pt" style={{ paddingTop: 120 }}>
       <View className="h-20">
         <FormHeader
-          leftHeading="welcome "
-          rightHeading="test"
-          subHeading="vffff"
+          leftHeading="Welcome "
+          rightHeading="Home"
+          subHeading="www.alten.com"
           rightHeaderOpacity={rightHeaderOpacity}
           leftHeaderTranslateX={leftHeaderTranslateX}
           rightHeaderTransleteY={rightHeaderTransleteY}
         />
       </View>
-      <View className="flex-row px-6 mb-5">
+      <View className="flex-row px-6 mb-5 pt-5">
         <FormSelectorBtn
           style={styles.borderLeft}
           backgroundColor={logincolorIntorplate}
-          title="logs"
+          title="Se connecter"
+          onPress={() => scrollView.current.scrollTo({ x: 0 })}
         />
         <FormSelectorBtn
           style={styles.borderRight}
           backgroundColor={signupcolorIntorplate}
-          title="signup"
+          title="Creer un compte"
+          onPress={() => scrollView.current.scrollTo({ x: width })}
         />
       </View>
       <ScrollView
+        ref={scrollView}
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}

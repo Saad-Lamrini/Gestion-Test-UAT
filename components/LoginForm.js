@@ -5,7 +5,7 @@ import FormContainer from './FormContainer';
 const LoginForm = () => {
   return (
     <FormContainer>
-      <Text style={{ fontWeight: 'bold' }}>Email</Text>
+      <Text style={{ fontWeight: 'bold', paddingBottom: 5 }}>Email:</Text>
       <TextInput
         placeholder="example@email.com"
         style={{
@@ -18,9 +18,12 @@ const LoginForm = () => {
           marginBottom: 20,
         }}
       />
-      <Text style={{ fontWeight: 'bold' }}>Password</Text>
+      <Text style={{ fontWeight: 'bold', paddingBottom: 5 }}>
+        Mot de passe:
+      </Text>
       <TextInput
         placeholder="******"
+        secureTextEntry
         style={{
           borderWidth: 1,
           borderColor: '#1b1b33',
@@ -34,13 +37,13 @@ const LoginForm = () => {
       <TouchableOpacity
         style={{
           height: 45,
-          backgroundColor: 'rgba(27,27,51,0.4)',
+          backgroundColor: 'rgba(255, 220, 0, 1)',
           borderRadius: 8,
           justifyContent: 'center',
           alignItems: 'center',
         }}
       >
-        <Text style={{ fontSize: 18, color: '#fff' }}>Login</Text>
+        <Text style={{ fontSize: 18, color: 'black' }}>Se connecter</Text>
       </TouchableOpacity>
     </FormContainer>
   );

@@ -3,12 +3,11 @@ import React, { useRef } from 'react';
 import { Dimensions, Animated } from 'react-native';
 import FormContainer from './FormContainer';
 const SignupForm = () => {
-  const animation = useRef(new Animated.Value(0)).current;
   return (
     <FormContainer>
-      <Text style={{ fontWeight: 'bold' }}>Name</Text>
+      <Text style={{ fontWeight: 'bold', paddingBottom: 5 }}>Nom:</Text>
       <TextInput
-        placeholder="Enter your name"
+        placeholder="Entrez votre nom"
         style={{
           borderWidth: 1,
           borderColor: '#1b1b33',
@@ -19,7 +18,7 @@ const SignupForm = () => {
           marginBottom: 20,
         }}
       />
-      <Text style={{ fontWeight: 'bold' }}>Email</Text>
+      <Text style={{ fontWeight: 'bold', paddingBottom: 5 }}>Email:</Text>
       <TextInput
         placeholder="example@email.com"
         style={{
@@ -32,9 +31,12 @@ const SignupForm = () => {
           marginBottom: 20,
         }}
       />
-      <Text style={{ fontWeight: 'bold' }}>Password</Text>
+      <Text style={{ fontWeight: 'bold', paddingBottom: 5 }}>
+        Mot de Passe:
+      </Text>
       <TextInput
         placeholder="******"
+        secureTextEntry
         style={{
           borderWidth: 1,
           borderColor: '#1b1b33',
@@ -45,9 +47,12 @@ const SignupForm = () => {
           marginBottom: 20,
         }}
       />
-      <Text style={{ fontWeight: 'bold' }}>Confirm your Password</Text>
+      <Text style={{ fontWeight: 'bold', paddingBottom: 5 }}>
+        Confirmez votre mot de passe:
+      </Text>
       <TextInput
         placeholder="******"
+        secureTextEntry
         style={{
           borderWidth: 1,
           borderColor: '#1b1b33',
@@ -61,13 +66,13 @@ const SignupForm = () => {
       <TouchableOpacity
         style={{
           height: 45,
-          backgroundColor: 'rgba(27,27,51,0.4)',
+          backgroundColor: 'rgba(255, 220, 0, 1)',
           borderRadius: 8,
           justifyContent: 'center',
           alignItems: 'center',
         }}
       >
-        <Text style={{ fontSize: 18, color: '#fff' }}>Signup</Text>
+        <Text style={{ fontSize: 18, color: 'black' }}>Valider</Text>
       </TouchableOpacity>
     </FormContainer>
   );
