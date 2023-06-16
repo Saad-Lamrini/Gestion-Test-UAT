@@ -2,15 +2,31 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import React, { useRef, useState } from 'react';
 import { Dimensions, Animated } from 'react-native';
 import FormContainer from './FormContainer';
+import initfirebase from '../firebase';
 const SignupForm = () => {
   const [name, SetName] = useState();
-  const [emai, SetEmail] = useState();
+  const [email, SetEmail] = useState();
   const [password, SetPassword] = useState();
   const [pw2, SetPw2] = useState();
+  const auth = initfirebase.auth();
   const creercompte = () => {
-    console.log(password);
     if (password != pw2) {
-      console.log('zeebi');
+      alert('les mots de passe ne sont pas identiques');
+    } else {
+      auth
+        .createUserWithEmailAndPassword(email, password)
+        .then((authUser) => {
+          authUser.user.updateProfile({
+            displayName: name, // Update display name
+            // Update photo URL
+          });
+          alert('Compte cree avec succees');
+
+          //navigation.replace('login');
+        })
+        .catch((erreur) => {
+          alert(erreur);
+        });
     }
   };
   return (
