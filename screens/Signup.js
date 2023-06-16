@@ -35,11 +35,11 @@ const Signup = () => {
   });
   const logincolorIntorplate = animation.interpolate({
     inputRange: [0, width],
-    outputRange: ['rgba(208, 0, 0, 1)', 'rgba(208, 0, 0, 0.4)'],
+    outputRange: ['#0FABBC', 'rgba(18, 202, 214, 0.2)'],
   });
   const signupcolorIntorplate = animation.interpolate({
     inputRange: [0, width],
-    outputRange: ['rgba(208, 0, 0, 0.4)', 'rgba(208, 0, 0, 1)'],
+    outputRange: ['rgba(18, 202, 214, 0.2)', '#0FABBC'],
   });
   return (
     <View className="flex-1 pt" style={{ paddingTop: 120 }}>

@@ -8,7 +8,7 @@ const FormSelectorBtn = ({ backgroundColor, title, style, onPress }) => {
         className="h-12 w-1/2 justify-center items-center"
         style={[style, { backgroundColor }]}
       >
-        <Text className="text-black text-base">{title}</Text>
+        <Text className="text-black text-base font-bold">{title}</Text>
       </Animated.View>
     </TouchableWithoutFeedback>
   );

@@ -20,7 +20,7 @@ const FormHeader = ({
           className="font-bold text-5xl"
           style={{
             transform: [{ translateX: leftHeaderTranslateX }],
-            color: 'rgba(0, 180, 216, 1)',
+            color: '#FA1616',
           }}
         >
           {leftHeading}
@@ -30,7 +30,7 @@ const FormHeader = ({
           style={{
             opacity: rightHeaderOpacity,
             transform: [{ translateY: rightHeaderTransleteY }],
-            color: 'rgba(0, 180, 216, 1)',
+            color: '#FA1616',
           }}
         >
           {rightHeading}
